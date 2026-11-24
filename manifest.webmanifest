@@ -1,0 +1,10 @@
+{
+  "name": "Dil Ki Dhadkan AI",
+  "short_name": "Dhadkan AI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#100d20",
+  "theme_color": "#17112f",
+  "lang": "hi",
+  "description": "Dil Ki Dhadkan AI Creator Studio"
+}

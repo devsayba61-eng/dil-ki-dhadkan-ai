@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17112f"><meta name="description" content="Dil Ki Dhadkan AI Creator Studio">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Dil Ki Dhadkan AI — Real AI Photo V3</title>
+<style>
+:root{--bg:#100d20;--panel:#211a3b;--panel2:#30244f;--pink:#ff6bb5;--violet:#9b7cff;--text:#fff;--muted:#c8bfdc;--line:#51416f}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#453078 0,#17112f 42%,#0e0b1b 100%);color:var(--text);font:16px system-ui,-apple-system,Arial}
+.app{max-width:560px;min-height:100vh;margin:auto;padding:16px 16px 100px}.top{display:flex;align-items:center;gap:11px;margin:8px 0 22px}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#4a8cff,#b44bff);display:grid;place-items:center;font-size:27px}.brand{font-weight:800;font-size:18px}.tag{font-size:12px;color:var(--muted)}.lang{margin-left:auto;background:#30264c;border:1px solid #57477c;color:white;border-radius:20px;padding:8px 12px}
+h1{font-size:27px;line-height:1.15;margin:10px 0}h2{font-size:20px;margin:24px 0 12px}.muted{color:var(--muted);font-size:14px}.hero{padding:22px;border:1px solid #67529a;border-radius:24px;background:linear-gradient(135deg,#31245c,#252047 55%,#472653)}.hero p{color:#e4daf7}.btn{border:0;border-radius:14px;padding:13px 16px;font-weight:700;background:linear-gradient(90deg,#8d6bff,#e45cae);color:white;cursor:pointer}.btn:disabled{opacity:.55}.btn.secondary{background:#382d59;border:1px solid #65528d}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.tile,.card{background:#211a3b;border:1px solid #453765;border-radius:18px;padding:15px}.tile{cursor:pointer}.tile .emoji{font-size:25px}.tile b{display:block;margin:7px 0 3px}.tile small{color:var(--muted)}.field,textarea,select{width:100%;background:#17122b;color:white;border:1px solid #57477c;border-radius:13px;padding:12px;margin:7px 0 12px;font:inherit}textarea{min-height:105px;resize:vertical}label{display:block;font-weight:600}.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(560px,100%);display:flex;justify-content:space-around;background:#17112ff2;backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px 4px calc(10px + env(safe-area-inset-bottom));z-index:5}.nav button{background:none;border:0;color:var(--muted);font-size:11px;display:grid;gap:4px;justify-items:center}.nav button span{font-size:20px}.nav button.active{color:#ff8bc7}.hidden{display:none!important}.notice{font-size:12px;color:var(--muted);border-left:3px solid #a78bfa;padding:9px 11px;background:#211a3b;border-radius:7px;margin-top:12px;line-height:1.5}.pill{display:inline-block;padding:5px 9px;border-radius:20px;background:#392d5b;color:#e6dcff;font-size:12px}.row{display:flex;gap:10px;align-items:center}.preview{width:100%;max-height:360px;object-fit:contain;border-radius:14px;background:#100d20}.status{padding:10px;border-radius:12px;background:#30264c;color:#e8dcff;font-size:13px;margin:10px 0}.feed{display:grid;gap:12px}.post{background:#211a3b;border:1px solid #453765;border-radius:18px;padding:15px}.chip{background:#382d59;border:1px solid #5a4b7e;color:#fff;border-radius:18px;padding:7px 11px}.actions{display:flex;gap:8px;flex-wrap:wrap}.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#4a8cff,#d75bb9);display:grid;place-items:center}.posttop{display:flex;align-items:center;gap:10px}.small{font-size:12px}.filepick{display:block;padding:13px;border:1px dashed #7965a7;border-radius:13px;text-align:center;margin:8px 0 12px;color:#e6dcff}
+</style>
+</head>
+<body><main class="app">
+<header class="top"><div class="logo">💜</div><div><div class="brand">Dil Ki Dhadkan AI</div><div class="tag">Create • Love • Enjoy • Share</div></div><span class="pill">V3.0 AI</span></header>
+<section id="home" class="page">
+<div class="hero"><span class="pill">आपकी क्रिएटिव दुनिया</span><h1>दिल से बनाइए,<br>दुनिया से साझा कीजिए ❤️</h1><p>AI फोटो, वीडियो, गाने और कहानियाँ — एक ही जगह।</p><button class="btn" onclick="go('photo')">AI Photo बनाना शुरू करें ✨</button></div>
+<h2>Creator Studio</h2><div class="grid">
+<div class="tile" onclick="go('photo')"><div class="emoji">🪄</div><b>AI Photo Maker</b><small>फोटो बनाएं</small></div>
+<div class="tile" onclick="go('video')"><div class="emoji">🎬</div><b>AI Video Maker</b><small>वीडियो आइडिया</small></div>
+<div class="tile" onclick="go('song')"><div class="emoji">🎵</div><b>AI Song Maker</b><small>गीत और लिरिक्स</small></div>
+<div class="tile" onclick="go('story')"><div class="emoji">📖</div><b>AI Story Maker</b><small>कहानियाँ लिखें</small></div>
+</div>
+<h2>आपका काम</h2><div class="card"><b id="workCount">0 रचनाएँ सेव हैं</b><p class="muted">इस डिवाइस पर सेव की गई रचनाएँ My Work में मिलेंगी।</p><button class="btn secondary" onclick="go('work')">My Work खोलें</button></div>
+</section>
+<section id="photo" class="page hidden">
+<h1>AI Photo Maker 🪄</h1><p class="muted">अपना आइडिया लिखें। चाहें तो अपनी फोटो भी चुनें।</p>
+<label for="photoPrompt">आप कैसी फोटो बनाना चाहते हैं?</label><textarea id="photoPrompt" placeholder="उदाहरण: पहाड़ों में सुनहरी सुबह, सिनेमैटिक पोर्ट्रेट..."></textarea>
+<label for="photoStyle">Photo Style चुनें</label><select id="photoStyle"><option value="Cinematic">Cinematic</option><option value="Portrait">Portrait</option><option value="Nature">Nature</option><option value="Vintage">Vintage</option><option value="Fantasy">Fantasy</option><option value="Anime">Anime</option><option value="Realistic">Realistic</option></select>
+<label for="appAccessCode">सर्वर Access Code (सेटअप के बाद डालें)</label><input id="appAccessCode" class="field" type="password" autocomplete="off" placeholder="आपका निजी access code">
+<label class="filepick" for="photoInput">📷 अपनी फोटो चुनें (वैकल्पिक)</label><input id="photoInput" class="field" type="file" accept="image/*">
+<div id="uploadPreview" class="hidden"><img id="sourcePreview" class="preview" alt="आपकी चुनी हुई फोटो"></div>
+<button id="generatePhoto" class="btn" onclick="requestImage()">AI फोटो बनाएं</button>
+<div id="photoStatus" class="status">अभी Cloudflare AI सर्वर सेटअप बाकी है। सेटअप पूरा होने पर यही बटन असली AI फोटो बनाएगा।</div>
+<div id="generatedArea" class="hidden card"><h3>आपकी AI फोटो</h3><img id="generatedImage" class="preview" alt="Generated image"><div class="row" style="flex-wrap:wrap;margin-top:10px"><button class="btn" onclick="downloadGenerated()">⬇️ मोबाइल में Download</button><button class="btn secondary" onclick="saveGenerated()">My Work में सेव करें</button></div></div>
+<div class="notice">सुरक्षा: Cloudflare AI binding सर्वर पर रहेगा। कोई Cloudflare API token या secret इस ऐप में न डालें। केवल अपना निजी Access Code यहाँ डालें।</div>
+</section>
+<section id="video" class="page hidden"><h1>AI Video Maker 🎬</h1><p class="muted">वीडियो का विषय और स्टाइल लिखें।</p><textarea id="videoPrompt" placeholder="उदाहरण: 15 सेकंड की पहाड़ी यात्रा रील..."></textarea><button class="btn" onclick="saveIdea('AI Video Idea','videoPrompt')">वीडियो आइडिया सेव करें</button><div class="notice">वीडियो जनरेशन API और सर्वर अगली इंटीग्रेशन में जोड़े जाएंगे।</div></section>
+<section id="song" class="page hidden"><h1>AI Song Maker 🎵</h1><p class="muted">अपने गाने का मूड और विषय लिखें।</p><textarea id="songPrompt" placeholder="उदाहरण: प्यार पर एक मधुर हिंदी गीत..."></textarea><button class="btn" onclick="saveIdea('AI Song Idea','songPrompt')">गीत आइडिया सेव करें</button><div class="notice">असली संगीत/आवाज़ जनरेशन अभी कनेक्ट नहीं है।</div></section>
+<section id="story" class="page hidden"><h1>AI Story Maker 📖</h1><p class="muted">अपनी कहानी का विषय लिखें।</p><textarea id="storyPrompt" placeholder="उदाहरण: दो दोस्तों की प्रेरणादायक कहानी..."></textarea><button class="btn" onclick="saveIdea('AI Story Idea','storyPrompt')">कहानी आइडिया सेव करें</button><div class="notice">अभी यह आइडिया सेव करता है; AI लेखन सेवा जोड़ना बाकी है।</div></section>
+<section id="work" class="page hidden"><h1>My Work 💜</h1><p class="muted">आपकी सेव की गई रचनाएँ इसी डिवाइस में रहेंगी।</p><div id="works" class="feed"></div></section>
+<section id="community" class="page hidden"><h1>Creator Community ❤️</h1><p class="muted">ऑनलाइन पोस्टिंग अभी कनेक्ट नहीं है।</p><div class="notice">इस V2 शुरुआती पैकेज में अकाउंट, क्लाउड डेटाबेस और सार्वजनिक पोस्टिंग शामिल नहीं हैं।</div></section>
+</main>
+<nav class="nav">
+<button class="active" data-page="home" onclick="go('home')"><span>⌂</span>Home</button>
+<button data-page="photo" onclick="go('photo')"><span>🪄</span>AI Photo</button>
+<button data-page="video" onclick="go('video')"><span>🎬</span>Video</button>
+<button data-page="community" onclick="go('community')"><span>♡</span>Community</button>
+<button data-page="work" onclick="go('work')"><span>▣</span>My Work</button>
+</nav>
+<script>
+const STORE='dkdai_v2_work';
+let works=JSON.parse(localStorage.getItem(STORE)||'[]');
+function go(p){document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));document.getElementById(p).classList.remove('hidden');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));window.scrollTo(0,0);renderWork()}
+function renderWork(){document.getElementById('workCount').textContent=works.length+' रचनाएँ सेव हैं';const el=document.getElementById('works');el.innerHTML=works.length?works.map((w,i)=>`<article class="card"><b>${esc(w.kind)}</b><p>${esc(w.text||'')}</p>${w.image?`<img class="preview" src="${w.image}" alt="Saved creation">`:''}<div class="small muted">${esc(w.date||'')}</div></article>`).join(''):'<div class="card muted">अभी कोई रचना सेव नहीं है।</div>'}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function saveIdea(kind,id){const t=document.getElementById(id).value.trim();if(!t){alert('पहले अपना आइडिया लिखें।');return}works.unshift({kind,text:t,date:new Date().toLocaleString('hi-IN')});persist();alert('आपका आइडिया My Work में सेव हुआ।')}
+function persist(){localStorage.setItem(STORE,JSON.stringify(works));renderWork()}
+document.getElementById('photoInput').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;if(!f.type.startsWith('image/')){alert('कृपया इमेज फाइल चुनें।');return}const u=URL.createObjectURL(f);document.getElementById('sourcePreview').src=u;document.getElementById('uploadPreview').classList.remove('hidden')});
+async function resizeReferenceImage(file){
+  const bmp=await createImageBitmap(file);
+  const scale=Math.min(1,512/Math.max(bmp.width,bmp.height));
+  const w=Math.max(1,Math.round(bmp.width*scale)),h=Math.max(1,Math.round(bmp.height*scale));
+  const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
+  canvas.getContext('2d').drawImage(bmp,0,0,w,h);bmp.close();
+  return await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',0.86));
+}
+async function requestImage(){
+  const prompt=document.getElementById('photoPrompt').value.trim();
+  if(!prompt){alert('पहले फोटो का विवरण लिखें।');return}
+  const code=document.getElementById('appAccessCode').value.trim();
+  if(!code){alert('पहले सर्वर Access Code डालें।');return}
+  const status=document.getElementById('photoStatus');
+  const btn=document.getElementById('generatePhoto');
+  btn.disabled=true;status.textContent='असली AI फोटो बनाई जा रही है… इसमें थोड़ा समय लग सकता है।';
+  try{
+    const fd=new FormData();
+    const style=document.getElementById('photoStyle').value;
+    fd.append('prompt',prompt+'; visual style: '+style+', high-quality detailed image');
+    fd.append('style',style);
+    const f=document.getElementById('photoInput').files[0];
+    if(f){const small=await resizeReferenceImage(f);fd.append('image',small,'reference.jpg')}
+    const res=await fetch('/api/images/generate',{method:'POST',headers:{'X-App-Code':code},body:fd});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok)throw new Error(data.message||'AI सर्वर से जवाब नहीं मिला।');
+    if(!data.imageBase64)throw new Error('AI से इमेज नहीं मिली।');
+    const src='data:'+(data.mimeType||'image/jpeg')+';base64,'+data.imageBase64;
+    document.getElementById('generatedImage').src=src;
+    document.getElementById('generatedArea').classList.remove('hidden');
+    status.textContent='✅ आपकी असली AI फोटो तैयार है! अब Download या My Work में सेव करें।';
+    window.generatedPhoto={prompt:prompt+' ('+style+')',image:src};
+  }catch(err){status.textContent='समस्या: '+err.message+' यदि अभी सर्वर सेटअप नहीं हुआ है, तो पहले Cloudflare सेटअप पूरा करना होगा।'}
+  finally{btn.disabled=false}
+}
+function downloadGenerated(){
+  if(!window.generatedPhoto)return;
+  const a=document.createElement('a');a.href=window.generatedPhoto.image;
+  a.download='Dil-Ki-Dhadkan-AI-'+Date.now()+'.jpg';
+  document.body.appendChild(a);a.click();a.remove();
+}
+function saveGenerated(){
+  if(!window.generatedPhoto)return;
+  works.unshift({kind:'AI Photo',text:window.generatedPhoto.prompt,image:window.generatedPhoto.image,date:new Date().toLocaleString('hi-IN')});
+  try{persist();alert('फोटो My Work में सेव हुई।')}catch(e){alert('फोटो डाउनलोड करें; My Work की जगह सीमित हो सकती है।')}
+}
+renderWork();
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body></html>
